@@ -1,8 +1,14 @@
 <?php
 
+use App\Http\Controllers\Pages\CartController;
+use App\Http\Controllers\Pages\CheckoutController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\Pages\ProductController;
+use App\Http\Controllers\Pages\SingleProductController;
+use App\Http\Controllers\Pages\WishlistController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +27,13 @@ Route::get('/', function () {
     return view('index');
 })->name('welcome');
 
-
-Route::get('/shop', ProductController::class)->name('shop');
+//Pages
+Route::get('/shop', ProductController::class)->name('product');
+Route::get('/wish-list', WishlistController::class)->name('wishlist');
+Route::get('/product', SingleProductController::class)->name('single-product');
+Route::get('/cart', CartController::class)->name('cart');
+Route::get('/check-out', CheckoutController::class)->name('check-out');
+//End Pages
 
 
 
