@@ -1,0 +1,9 @@
+<x-welcome-layout>
+    @include('partials.header')
+    @include('partials.navbar')
+    @include('partials.home-section')
+    @include('partials.category')
+    @include('partials.product')
+    @include('partials.newsletter')
+    @include('partials.footer')
+</x-welcome-layout>
