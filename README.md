@@ -9,7 +9,8 @@
 
 ## Ongoing Project
 
-![image](https://github.com/joserodny/vegefoods/assets/41980624/1eba79de-b266-47c4-824a-1f79c0031092)
+
+![Vegefoods](https://github.com/joserodny/vegefoods/assets/41980624/05438fcb-9210-4713-80d5-ab0cacf610d7)
 
 
 ![image](https://github.com/joserodny/vegefoods/assets/41980624/e3c56a71-491d-48b1-b26d-2b1183ce75ad)
