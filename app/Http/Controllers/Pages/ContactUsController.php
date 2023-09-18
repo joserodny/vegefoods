@@ -18,8 +18,8 @@ class ContactUsController extends Controller
     {
         $formFields = $request->validated();
 
-        $test = ContactUs::created($formFields);
+        ContactUs::create($formFields);
 
-        dd($test);
+        return redirect('/');
     }
 }
