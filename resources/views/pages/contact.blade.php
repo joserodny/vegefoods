@@ -43,21 +43,35 @@
             </div>
             <div class="row block-9">
                 <div class="col-md-6 order-md-last d-flex">
-                    <form action="#" class="bg-white p-5 contact-form">
+                    <form action="{{ route('contact.store') }}" method="POST" class="bg-white p-5 contact-form">
+                        @csrf
+
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name">
+                            <input value="{{old('name')}}" type="text" class="form-control {{($errors->first('name') ? "is-invalid" : "")}}" placeholder="Your Name" name="name">
+                            @error('name')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Email">
+                            <input value="{{old('email')}}" type="email" class="form-control {{($errors->first('email') ? "is-invalid" : "")}}" placeholder="Your Email" name="email">
+                            @error('email')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Subject">
+                            <input value="{{old('subject')}}" type="text" class="form-control {{($errors->first('subject') ? "is-invalid" : "")}}" placeholder="Subject" name="subject">
+                            @error('subject')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="form-group">
-                            <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                            <textarea value="{{old('message')}}" name="message" id="" cols="30" rows="7" class="form-control {{($errors->first('message') ? "is-invalid" : "")}}" placeholder="Message"></textarea>
+                            @error('message')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="form-group">
-                            <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+                            <button type="submit" class="btn btn-primary py-3 px-5">Send Message</button>
                         </div>
                     </form>
 

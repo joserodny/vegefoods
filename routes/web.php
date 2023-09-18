@@ -2,15 +2,13 @@
 
 use App\Http\Controllers\Pages\CartController;
 use App\Http\Controllers\Pages\CheckoutController;
-use App\Http\Controllers\Pages\ContactController;
+use App\Http\Controllers\Pages\ContactUsController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\Pages\ProductController;
 use App\Http\Controllers\Pages\SingleProductController;
 use App\Http\Controllers\Pages\WishlistController;
 
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +21,6 @@ use App\Http\Controllers\Pages\WishlistController;
 */
 
 
-
 Route::get('/', function () {
     return view('index');
 })->name('welcome');
@@ -33,8 +30,11 @@ Route::get('/shop', ProductController::class)->name('product');
 Route::get('/wish-list', WishlistController::class)->name('wishlist');
 Route::get('/product', SingleProductController::class)->name('single-product');
 Route::get('/cart', CartController::class)->name('cart');
-Route::get('/contact', ContactController::class)->name('contact');
 Route::get('/check-out', CheckoutController::class)->name('check-out');
+
+Route::get('/contact', [ContactUsController::class, 'index'])->name('contact');
+Route::post('/contact', [ContactUsController::class, 'store'])->name('contact.store');
+
 //End Pages
 
 
@@ -44,9 +44,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-Route::middleware(['auth', 'user-role:admin'])->group(function () {
-    Route::get('/admin/dashboard', [HomeController::class, 'adminHome'])->name('adminDashboard');
-});
+// Route::middleware(['auth', 'user-role:admin'])->group(function () {
+//     Route::get('/admin/dashboard', [HomeController::class, 'adminHome'])->name('adminDashboard');
+// });
 
 
 
