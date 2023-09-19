@@ -54,9 +54,9 @@
     <script src="./assets/js/jquery.animateNumber.min.js"></script>
     <script src="./assets/js/bootstrap-datepicker.js"></script>
     <script src="./assets/js/scrollax.min.js"></script>
-    <script src="./assets/js/google-map.js"></script>
     <script src="./assets/js/main.js"></script>
 
+    @stack('scripts')
 </body>
 
 </html>

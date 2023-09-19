@@ -43,29 +43,29 @@
             </div>
             <div class="row block-9">
                 <div class="col-md-6 order-md-last d-flex">
-                    <form action="{{ route('contact.store') }}" method="POST" class="bg-white p-5 contact-form">
+                    <form method="POST" action="{{ route('contact.store') }}" class="bg-white p-5 contact-form">
                         @csrf
 
                         <div class="form-group">
-                            <input value="{{old('name')}}" type="text" class="form-control {{($errors->first('name') ? "is-invalid" : "")}}" placeholder="Your Name" name="name">
+                            <input id="nameID" value="{{old('name')}}" type="text" class="form-control {{($errors->first('name') ? "is-invalid" : "")}}" placeholder="Your Name" name="name">
                             @error('name')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <input value="{{old('email')}}" type="email" class="form-control {{($errors->first('email') ? "is-invalid" : "")}}" placeholder="Your Email" name="email">
+                            <input id="emailID" value="{{old('email')}}" type="email" class="form-control {{($errors->first('email') ? "is-invalid" : "")}}" placeholder="Your Email" name="email">
                             @error('email')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <input value="{{old('subject')}}" type="text" class="form-control {{($errors->first('subject') ? "is-invalid" : "")}}" placeholder="Subject" name="subject">
+                            <input id="subjectID" value="{{old('subject')}}" type="text" class="form-control {{($errors->first('subject') ? "is-invalid" : "")}}" placeholder="Subject" name="subject">
                             @error('subject')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <textarea value="{{old('message')}}" name="message" id="" cols="30" rows="7" class="form-control {{($errors->first('message') ? "is-invalid" : "")}}" placeholder="Message"></textarea>
+                            <textarea id="messageID" value="{{old('message')}}" name="message" id="" cols="30" rows="7" class="form-control {{($errors->first('message') ? "is-invalid" : "")}}" placeholder="Message"></textarea>
                             @error('message')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -74,7 +74,6 @@
                             <button type="submit" class="btn btn-primary py-3 px-5">Send Message</button>
                         </div>
                     </form>
-
                 </div>
 
                 <div class="col-md-6 d-flex">
@@ -88,4 +87,5 @@
     {{--  Enc Contact  --}}
     @include('partials.newsletter')
     @include('partials.footer')
+
 </x-welcome-layout>

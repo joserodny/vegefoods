@@ -2,6 +2,7 @@
     @include('partials.header')
     @include('partials.navbar')
     @include('partials.home-section')
+    @include('partials.services')
     @include('partials.category')
     @include('partials.product')
     @include('partials.newsletter')
