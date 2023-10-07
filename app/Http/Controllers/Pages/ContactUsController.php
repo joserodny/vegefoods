@@ -16,7 +16,7 @@ class ContactUsController extends Controller
 
     public function store(ContactUsRequest $request)
     {
-        ContactUs::create($$request->validated());
+        ContactUs::create($request->validated());
 
         // #1
         // $formFields = $request->validated();
