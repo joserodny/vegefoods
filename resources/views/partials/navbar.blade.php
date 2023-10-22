@@ -16,9 +16,16 @@
                     @guest
                         <a href="{{ route('login') }}" class="nav-link">Login</a>
                     @endguest
+
                     @auth
                         <a href="{{ route('dashboard') }}" class="nav-link"> {{ mb_substr(Auth::user()->name, 0, 7) }}</a>
                     @endauth
+                </li>
+
+                <li class="nav-item">
+                    @guest
+                        <a href="{{ route('register') }}" class="nav-link">Register</a>
+                    @endguest
                 </li>
                 @auth
                     @if (Auth::user()->type === 'admin')

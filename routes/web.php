@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Pages\CartController;
 use App\Http\Controllers\Pages\CheckoutController;
@@ -45,9 +46,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-// Route::middleware(['auth', 'user-role:admin'])->group(function () {
-//     Route::get('/admin/dashboard', [HomeController::class, 'adminHome'])->name('adminDashboard');
-// });
+Route::middleware(['auth', 'user-access:admin'])->group(function () {
+    Route::get('/admin/dashboard', AdminController::class)->name('adminDashboard');
+});
 
 
 
