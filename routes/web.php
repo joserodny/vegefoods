@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Pages\CartController;
 use App\Http\Controllers\Pages\CheckoutController;
 use App\Http\Controllers\Pages\ContactUsController;
@@ -20,10 +21,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Route::get('/', function () {
-    return view('index');
-})->name('welcome');
+Route::get('/', IndexController::class)->name('welcome');
+// Route::get('/', function () {
+//     return view('index');
+// })->name('welcome');
 
 //Pages
 Route::get('/shop', ProductController::class)->name('product');
